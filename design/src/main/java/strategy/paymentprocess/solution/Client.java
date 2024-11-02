@@ -6,15 +6,15 @@ public class Client {
         PaymentProcessor processor;
 
         // Choose Credit Card Payment
-        processor = new PaymentProcessor(new CreditCardPayment());
+        processor = new PaymentProcessor(FactoryPayment.createStrategy("creditCard"));
         processor.processPayment(150.00);
 
         // Choose PayPal Payment
-        processor = new PaymentProcessor(new PaypalPayment());
+        processor = new PaymentProcessor(FactoryPayment.createStrategy("paypal"));
         processor.processPayment(200.00);
 
         // Choose Bank Transfer Payment
-        processor = new PaymentProcessor(new BankTransferPayment());
+        processor = new PaymentProcessor(FactoryPayment.createStrategy("bankTransfer"));
         processor.processPayment(300.00);
     }
 }

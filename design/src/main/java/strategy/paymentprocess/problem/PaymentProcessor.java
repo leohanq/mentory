@@ -3,14 +3,11 @@ package strategy.paymentprocess.problem;
 public class PaymentProcessor {
 
     public void processPayment(String method, double amount) {
-        if (method.equals("creditCard")) {
-            processCreditCardPayment(amount);
-        } else if (method.equals("paypal")) {
-            processPaypalPayment(amount);
-        } else if (method.equals("bankTransfer")) {
-            processBankTransferPayment(amount);
-        } else {
-            throw new IllegalArgumentException("Unsupported payment method: " + method);
+        switch (method) {
+            case "creditCard" -> processCreditCardPayment(amount);
+            case "paypal" -> processPaypalPayment(amount);
+            case "bankTransfer" -> processBankTransferPayment(amount);
+            default -> throw new IllegalArgumentException("Unsupported payment method: " + method);
         }
     }
 

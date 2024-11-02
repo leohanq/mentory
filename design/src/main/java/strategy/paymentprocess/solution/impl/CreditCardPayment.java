@@ -1,4 +1,6 @@
-package strategy.paymentprocess.solution;
+package strategy.paymentprocess.solution.impl;
+
+import strategy.paymentprocess.solution.PaymentStrategy;
 
 public class CreditCardPayment implements PaymentStrategy {
     @Override
