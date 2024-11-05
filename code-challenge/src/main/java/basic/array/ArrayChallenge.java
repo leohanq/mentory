@@ -4,7 +4,7 @@ public class ArrayChallenge {
 
     public int findThirdLargestNumber(int[] numbers) {
         int temp, index, after;
-        for (int j = 0; j < numbers.length; j ++) {
+        for (int j = 0; j < 3; j ++) {
             for (int i = j; i < numbers.length - 1; i++) {
                 after = numbers[i + 1];
                 index = numbers[j];
